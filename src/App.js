@@ -9,6 +9,7 @@ import Music from './components/Music/Music';
 import Setings from './components/Setings/Setings';
 
 
+
 const App = (props) => {
     return (
         <BrowserRouter>
@@ -22,8 +23,11 @@ const App = (props) => {
                             <Route path="/dialog" element={<Dialogs dialogs={props.state.messagesPage.dialogs}
                                                                     messages={props.state.messagesPage.messages}/>}/>
                             <Route path="/profile"
-                                   element={<Profile posts={props.state.profilePage.posts} addPost={props.addPost}/>}/>
-
+                                   element={<Profile newPostText={props.state.profilePage.newPostText}
+                                                     posts={props.state.profilePage.posts}
+                                                     addPost={props.addPost}
+                                                     updateNewPostText={props.updateNewPostText}
+                                   />}/>
                             <Route path="/news" element={<News/>}/>
                             <Route path="/music" element={<Music/>}/>
                             <Route path="/setings" element={<Setings/>}/>
