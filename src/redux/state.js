@@ -8,7 +8,7 @@ let store = {
                 {id: 1, message: 'Hi how are you?', likesCount: 12},
                 {id: 2, message: 'it`s my first post', likesCount: 2}
             ],
-            newPostText: 'new post text'
+            newPostText: 'new post text yo yo yo'
 
         },
         messagesPage: {
