@@ -12,3 +12,4 @@ let reducers = combineReducers({
 const store = legacy_createStore(reducers);
 
 export default store;
+
