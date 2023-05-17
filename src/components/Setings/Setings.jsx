@@ -1,12 +1,12 @@
 import React from "react"
 
 
-const Setings = (props) => {
+const Settings = (props) => {
     return (
         <div>
-           Setings - Страница настроек.
+           Settings - Страница настроек.
         </div>
     )
 }
 
-export default Setings;
+export default Settings;

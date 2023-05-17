@@ -6,11 +6,14 @@ import Dialogs from './components/Dialogs/Dialogs';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import News from './components/News/News';
 import Music from './components/Music/Music';
-import Setings from './components/Setings/Setings';
+import Settings from './components/Setings/Setings';
 
 
 
 const App = (props) => {
+
+    console.log(props)
+
     return (
         <BrowserRouter>
             <div className='app'>
@@ -28,7 +31,7 @@ const App = (props) => {
                                                         />}/>
                             <Route path="/news" element={<News/>}/>
                             <Route path="/music" element={<Music/>}/>
-                            <Route path="/setings" element={<Setings/>}/>
+                            <Route path="/settings" element={<Settings/>}/>
                         </Routes>
                     </div>
                 </div>
