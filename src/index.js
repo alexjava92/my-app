@@ -5,10 +5,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from "./StoreContext";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerenderEntireTree = (state) =>{
 
     root.render(
 
@@ -17,13 +16,9 @@ let rerenderEntireTree = (state) =>{
             <App/>
             </Provider>
         </React.StrictMode>
-    );}
+    );
 reportWebVitals();
 
 
-rerenderEntireTree(store.getState());
-store.subscribe(() => {
-    let state = store.getState()
-    rerenderEntireTree(state)
-});
+
 
