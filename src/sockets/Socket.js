@@ -1,9 +1,5 @@
 import WebSocket from 'ws';
 
-
-
-
-
 let ws = new WebSocket('ws://176.124.211.252:4567/service');
 
 ws.on('error', console.error);
