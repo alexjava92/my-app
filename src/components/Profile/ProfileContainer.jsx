@@ -6,7 +6,7 @@ import {setUsersProfile} from "../../redux/profilereducer";
 import { useParams } from "react-router-dom";
 
 function ProfileContainer(props) {
-    debugger
+
     const { userId } = useParams();
     let currUserId = userId||2
 
@@ -16,7 +16,7 @@ function ProfileContainer(props) {
             .then((response) => {
                 props.setUsersProfile(response.data);
             });
-    }, [userId]);
+    }, );
 
     return (
         <div>
