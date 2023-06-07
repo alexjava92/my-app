@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./users.module.css";
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 
 let User = (props) => {
@@ -34,9 +35,31 @@ let User = (props) => {
             </div>
                     <div>
                         {u.followed ? <button onClick={() => {
-                            props.unfollow(u.id)
+                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
+                                {withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "00c24f1d-a625-483f-8a89-0e5f78771e42"
+                                    }
+                                })
+                                .then(response => {
+                                    if (response.data.resultCode === 0){
+                                        props.unfollow(u.id)
+                                    }
+                                });
                         }}>Unfollow</button> : <button onClick={() => {
-                            props.follow(u.id)
+                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {},
+                                {withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "00c24f1d-a625-483f-8a89-0e5f78771e42"
+                                    }})
+                                .then(response => {
+                                   if (response.data.resultCode === 0){
+                                       props.follow(u.id)
+                                    }
+                                });
+
+
+
                         }}>Follow</button>}
                     </div>
                 </span>
