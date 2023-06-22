@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
         <img alt={""} src='https://www.seocom.ru/images/nasha-analitika/zagolovok/1500x500.jpg' />
         <div className={s.descriptionBlock}>
             <img  alt={""} src={props.profile.photos.large}/>
-            <ProfileStatus status={"hello my friend"}/>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
     </div>
 }
